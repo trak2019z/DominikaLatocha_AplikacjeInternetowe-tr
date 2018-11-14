@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=0" />
+    <meta name="google" content="notranslate" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <meta name="keywords" content="{{ keywords }}" />
+    <link href="css/style.min.css?cb={{ currentTimestamp }}" rel="stylesheet" />
+</head>
+<body{{#if bodyClass}} class="body--{{bodyClass}}"{{/if}}>
+    
+    <div class="wrapper">
+        {{> body }}
+    </div>
+
+    <!-- JavaScript core - start -->
+    <script data-main="app" src="js/main.js?cb={{ currentTimestamp }}"></script>
+    <!-- JavaScript core - end -->
+
+</body>
+</html>

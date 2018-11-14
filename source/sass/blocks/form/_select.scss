@@ -1,0 +1,87 @@
+.select{
+    position: relative;
+    margin-bottom: 16px;
+    z-index: 0;
+}
+
+.wrapper .select2-container{
+    width: 100% !important;
+}
+
+.select2-container--default{
+
+    &.select2-container--open{
+        .select2-selection--single{
+            border-bottom: 1px solid $color-purple;
+            border-radius: 4px 4px 0 0;
+        }
+    }
+
+    .select2-selection--single{
+        @include font-regular;
+        border-radius: 0;
+        background-color: $color-grey-1;
+        height: 48px;
+        border:none;
+        position:relative;
+        outline: none;
+        border-bottom: 1px solid transparent;
+        border-radius: 4px;
+
+        .select2-selection__arrow{
+            top:50%;
+            @include t(translateY(-50%));
+            background-color:transparent;
+            right:16px;
+
+            b{
+                font-size:20px;
+                border-color: $color-purple transparent transparent;
+            }
+        }
+
+        .select2-selection__rendered{
+            padding: 14px;
+            background-color: transparent;
+            @include font-regular;
+            color:$color-grey-3;   
+        }
+    } 
+    .select2-selection[aria-expanded="true"] .select2-selection__arrow{
+        @include t(translateY(-50%));
+
+        b{
+            border-color: transparent transparent $color-purple;
+        }
+    }
+
+    .select2-dropdown{
+        background-color: $color-grey-1;
+        border-radius: 0 0 4px 4px;
+        border: none;
+        @include font-regular;
+        overflow:hidden;
+    }
+
+    .select2-results__options{
+        position:relative;
+    }
+
+    .select2-results__option{
+        color:$color-grey-2;
+        @include a(color 0.4s ease, background-color 0.4s ease);
+    }
+
+    .select2-results__option--highlighted[aria-selected], 
+    .select2-results__option[aria-selected="true"],
+    .select2-results__option--hightlighted[aria-selected="true"]{
+        background-color: rgba($color-grey-4,0.4);
+        color: $color-grey-3;
+    }
+
+    .select2-results__option{
+        padding: 6px 6px 6px 15px;
+    }
+}
+
+

@@ -1,0 +1,13 @@
+$break-big-screen-min: 1440px;
+$break-desktop-min: 1025px;
+$break-tablet-max: 1024px;
+$break-tablet-min: 641px;
+$break-mobile-max: 640px;
+$break-mobile-min: 320px;
+
+$respond-to-breakpoints: (
+	desktop "(min-width:"+$break-desktop-min+")",
+	tablet "(min-width:"+$break-tablet-min+") and (max-width:"+$break-tablet-max+")",
+	mobile "(max-width:"+$break-mobile-max+")",
+	big-screen "(max-width:"+$break-big-screen-min+")"
+);

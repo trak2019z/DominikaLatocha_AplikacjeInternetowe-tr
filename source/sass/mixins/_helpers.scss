@@ -1,0 +1,79 @@
+/*
+ *
+ *  Transition
+ *
+ */
+
+@mixin a($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/*
+ *
+ *  Ellipsis
+ *
+ */
+
+@mixin ellipsis {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/*
+ *
+ *  Transform
+ *
+ */
+
+@mixin t($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+/*
+ *
+ *  Track
+ *
+ */
+
+@mixin track(){
+    &::-webkit-slider-runnable-track {
+        @content;
+    }
+    &::-moz-range-track {
+        @content;
+    }
+    &::-ms-track {
+        @content;
+    }
+}
+
+/*
+ *
+ *  Thumb
+ *
+ */
+
+@mixin thumb(){
+    &::-webkit-slider-thumb {
+        @content;
+        -webkit-appearance: none;
+        margin-top: -6px;
+    }
+    &::-moz-range-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+        margin: 6px 0;
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "photo-editor",
+  "dependencies": {
+    "jquery": "^3.2.0",
+    "requirejs": "^2.3.3",
+    "jsb": "^3.0.0",
+    "perfect-scrollbar": "^0.8.1",
+    "fabric.js": "fabric#^2.4.1",
+    "tinyColorPicker": "^1.1.1",
+    "select2": "^4.0.5"
+  }
+}

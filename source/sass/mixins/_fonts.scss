@@ -1,0 +1,40 @@
+/*
+ *
+ *  Fonts
+ *
+ */
+
+@mixin font-bold {
+    font-family : $font-bold;
+    font-weight : $font-weight-default;
+    font-size 	: $font-size-default;
+    line-height : $line-height-default;
+}
+
+@mixin font-semibold {
+    font-family : $font-semibold;
+    font-weight : $font-weight-default;
+    font-size 	: $font-size-default;
+    line-height : $line-height-default;
+}
+
+@mixin font-medium {
+    font-family : $font-medium;
+    font-weight : $font-weight-default;
+    font-size 	: $font-size-default;
+    line-height : $line-height-default;
+}
+
+@mixin font-regular {
+    font-family : $font-regular;
+    font-weight : $font-weight-default;
+    font-size 	: $font-size-default;
+    line-height : $line-height-default;
+}
+
+@mixin font-light {
+    font-family : $font-light;
+    font-weight : $font-weight-default;
+    font-size 	: $font-size-default;
+    line-height : $line-height-default;
+}

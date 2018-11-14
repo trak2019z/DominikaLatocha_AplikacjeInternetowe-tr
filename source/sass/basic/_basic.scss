@@ -1,0 +1,78 @@
+/*
+ *
+ *	Fonts
+ *
+ */
+
+body,
+input,
+button,
+select,
+textarea{
+	@include font-regular;
+}
+
+strong,
+b,
+.strong,
+.bold{
+    @include font-bold;
+}
+
+
+/*
+ *
+ *	Colors
+ *
+ */
+
+body{
+	background-color: $color-body;
+}
+
+
+/*
+ *
+ *	Wrapper
+ *
+ */
+
+.wrapper{
+    $wrapper: &;
+    position: relative;
+    z-index: 1;
+	overflow: hidden;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+
+/*
+ *
+ *	Page content
+ *
+ */
+
+.page-content{
+	max-width: 1216px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*
+ *
+ *  Colorpicker
+ *
+ */
+
+.cp-color-picker{
+    z-index: 999;
+    background-color: $color-body !important;
+    border-radius: 4px !important;
+    border: 1px solid $color-black;
+    .cp-z-cursor{
+    	border-color: transparent $color-body !important;
+    }
+}

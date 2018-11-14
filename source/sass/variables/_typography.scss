@@ -1,0 +1,51 @@
+//Font
+@font-face {
+  font-family: 'KoHo-Bold';
+  src: url('../fonts/KoHo-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/KoHo-Bold.woff') format('woff'), url('../fonts/KoHo-Bold.ttf')  format('truetype'), url('../fonts/KoHo-Bold.svg#KoHo-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo-SemiBold';
+  src: url('../fonts/KoHo-SemiBold.eot?#iefix') format('embedded-opentype'),  url('../fonts/KoHo-SemiBold.woff') format('woff'), url('../fonts/KoHo-SemiBold.ttf')  format('truetype'), url('../fonts/KoHo-SemiBold.svg#KoHo-SemiBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo-Medium';
+  src: url('../fonts/KoHo-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/KoHo-Medium.woff') format('woff'), url('../fonts/KoHo-Medium.ttf')  format('truetype'), url('../fonts/KoHo-Medium.svg#KoHo-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo-Regular';
+  src: url('../fonts/KoHo-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/KoHo-Regular.woff') format('woff'), url('../fonts/KoHo-Regular.ttf')  format('truetype'), url('../fonts/KoHo-Regular.svg#KoHo-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KoHo-Light';
+  src: url('../fonts/KoHo-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/KoHo-Light.woff') format('woff'), url('../fonts/KoHo-Light.ttf')  format('truetype'), url('../fonts/KoHo-Light.svg#KoHo-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-bold  	: 'KoHo-Bold', sans-serif;
+$font-semibold  : 'KoHo-SemiBold', sans-serif;
+$font-medium  	: 'KoHo-Medium', sans-serif;
+$font-regular  	: 'KoHo-Regular', sans-serif;
+$font-light  	: 'KoHo-Light', sans-serif;
+
+
+// Font size
+$font-size-default: 14px;
+
+// Font weight
+$font-weight-default: 400;
+
+// Line height
+$line-height-default: 1.4;

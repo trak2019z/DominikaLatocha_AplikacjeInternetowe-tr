@@ -1,0 +1,42 @@
+[   
+    {
+        "LABEL" : "Option 0",
+        "VALUE" : ""
+    },
+    {
+        "LABEL" : "Option 1",
+        "VALUE" : "value1"
+    },
+    {
+        "LABEL" : "Option 2",
+        "VALUE" : "value2"
+    },
+    {
+        "LABEL" : "Option 3",
+        "VALUE" : "value3"
+    },
+    {
+        "LABEL" : "Option 4",
+        "VALUE" : "value4"
+    },
+    {
+        "LABEL" : "Option 5",
+        "VALUE" : "value5"
+    },
+    {
+        "LABEL" : "Option 6",
+        "VALUE" : "value6"
+    },
+    {
+        "LABEL" : "Option 7",
+        "VALUE" : "value7"
+    },
+    {
+        "LABEL" :  "Option 8",
+        "VALUE" : "value8"
+    },
+    {
+        "LABEL" : "Option 9",
+        "VALUE" : "value9"
+    }
+]

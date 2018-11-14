@@ -1,0 +1,289 @@
+/*
+ *
+ *   Grid - start
+ *
+ */
+
+$grid-spacing: 16px;
+
+.grid{
+    
+    margin: 0;
+    margin-left: -$grid-spacing;
+    margin-right: -$grid-spacing;
+
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    &>&__col{
+        float: left;
+        padding: 0 $grid-spacing;
+        width: 100%;
+        min-height: 1px;
+        box-sizing: border-box;
+
+        
+        //desktop - start
+        &.desktop-last{
+            @include respond-to('desktop'){
+                float: right;
+            }
+        }
+
+        &.desktop-first{
+            @include respond-to('desktop'){
+                clear: both;
+            }
+        }
+
+        &.tablet-first{
+            @include respond-to('tablet'){
+                clear: both;
+            }
+        }
+
+        &.tablet-last{
+            @include respond-to('tablet'){
+                float: right;
+            }
+        }
+
+        &.mobile-first{
+            @include respond-to('mobile'){
+                clear: both;
+            }
+        }
+
+        &.mobile-last{
+            @include respond-to('mobile'){
+                float: right;
+            }
+        }
+
+        &.desktop-1{
+            @include respond-to('desktop'){
+                width: (100% / 12);
+            }
+        }
+
+        &.desktop-2{
+            @include respond-to('desktop'){
+                width: (100% / 6);
+            }
+        }
+
+        &.desktop-3{
+            @include respond-to('desktop'){
+                width: (100% / 4);
+            }
+        }
+
+        &.desktop-4{
+            @include respond-to('desktop'){
+                width: (100% / 3);
+            }
+        }
+
+        &.desktop-5{
+            @include respond-to('desktop'){
+                width: (100% / 2.4);
+            }
+        }
+
+        &.desktop-6{
+            @include respond-to('desktop'){
+                width: (100% / 2);
+            }
+        }
+
+        &.desktop-7{
+            @include respond-to('desktop'){
+                width: (100% / 1.714285714285714);
+            }
+        }
+
+        &.desktop-8{
+            @include respond-to('desktop'){
+                width: (100% / 1.5);
+            }
+        }
+
+        &.desktop-9{
+            @include respond-to('desktop'){
+                width: (100% / 1.333333333333333);
+            }
+        }
+
+        &.desktop-10{
+            @include respond-to('desktop'){
+                width: (100% / 1.2);
+            }
+        }
+
+        &.desktop-11{
+            @include respond-to('desktop'){
+                width: (100% / 1.090909090909091);
+            }
+        }
+
+        &.desktop-12{
+            @include respond-to('desktop'){
+                width: 100%;
+            }
+        }
+        //desktop - end
+
+        //tablet - start
+        &.tablet-1{
+            @include respond-to('tablet'){
+                width: (100% / 12);
+            }
+        }
+
+        &.tablet-2{
+            @include respond-to('tablet'){
+                width: (100% / 6);
+            }
+        }
+
+        &.tablet-3{
+            @include respond-to('tablet'){
+                width: (100% / 4);
+            }
+        }
+
+        &.tablet-4{
+            @include respond-to('tablet'){
+                width: (100% / 3);
+            }
+        }
+
+        &.tablet-5{
+            @include respond-to('tablet'){
+                width: (100% / 2.4);
+            }
+        }
+
+        &.tablet-6{
+            @include respond-to('tablet'){
+                width: (100% / 2);
+            }
+        }
+
+        &.tablet-7{
+            @include respond-to('tablet'){
+                width: (100% / 1.714285714285714);
+            }
+        }
+
+        &.tablet-8{
+            @include respond-to('tablet'){
+                width: (100% / 1.5);
+            }
+        }
+
+        &.tablet-9{
+            @include respond-to('tablet'){
+                width: (100% / 1.333333333333333);
+            }
+        }
+
+        &.tablet-10{
+            @include respond-to('tablet'){
+                width: (100% / 1.2);
+            }
+        }
+
+        &.tablet-11{
+            @include respond-to('tablet'){
+                width: (100% / 1.090909090909091);
+            }
+        }
+
+        &.tablet-12{
+            @include respond-to('tablet'){
+                width: 100%;
+            }
+        }
+        //tablet - end
+
+        //mobile - start
+        &.mobile-1{
+            @include respond-to('mobile'){
+                width: (100% / 12);
+            }
+        }
+
+        &.mobile-2{
+            @include respond-to('mobile'){
+                width: (100% / 6);
+            }
+        }
+
+        &.mobile-3{
+            @include respond-to('mobile'){
+                width: (100% / 4);
+            }
+        }
+
+        &.mobile-4{
+            @include respond-to('mobile'){
+                width: (100% / 3);
+            }
+        }
+
+        &.mobile-5{
+            @include respond-to('mobile'){
+                width: (100% / 2.4);
+            }
+        }
+
+        &.mobile-6{
+            @include respond-to('mobile'){
+                width: (100% / 2);
+            }
+        }
+
+        &.mobile-7{
+            @include respond-to('mobile'){
+                width: (100% / 1.714285714285714);
+            }
+        }
+
+        &.mobile-8{
+            @include respond-to('mobile'){
+                width: (100% / 1.5);
+            }
+        }
+
+        &.mobile-9{
+            @include respond-to('mobile'){
+                width: (100% / 1.333333333333333);
+            }
+        }
+
+        &.mobile-10{
+            @include respond-to('mobile'){
+                width: (100% / 1.2);
+            }
+        }
+
+        &.mobile-11{
+            @include respond-to('mobile'){
+                width: (100% / 1.090909090909091);
+            }
+        }
+
+        &.mobile-12{
+            @include respond-to('mobile'){
+                width: 100%;
+            }
+        }
+        //mobile - end
+
+    }
+
+}

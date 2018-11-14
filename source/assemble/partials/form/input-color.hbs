@@ -1,0 +1,13 @@
+<!-- input-color - start -->
+<div class="input-color">
+	<p class="input-color__label">{{LABEL}}</p>
+	
+	<div class="input-color__box">
+		{{#each DATA}}
+		<div class="input-color__box__item" style="background-color:{{this}};" data-color="{{this}}"></div>
+		{{/each}}
+	</div>
+	
+	<input type="text" class="input-color__input js-color-picker" name="{{NAME}}" value="{{VALUE}}"/>
+</div>
+<!-- input-color - end -->

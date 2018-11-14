@@ -1,0 +1,32 @@
+body,html{
+	height:100%;
+}
+
+:focus{
+	outline: none;
+}
+
+img{
+	display:block;
+}
+
+a{
+	text-decoration:none;
+}
+
+input,
+button,
+textarea,
+select{
+    font-size: 100%;
+    border: none;
+}
+
+*{
+    outline: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner{
+    border: none;
+}

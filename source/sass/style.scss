@@ -1,0 +1,32 @@
+/**
+ *
+ *	Main Stylesheet
+ *
+ */
+
+// Reset
+@import "reset/_reset.scss";
+@import "reset/_reset-custom.scss";
+
+// Variable
+@import "variables/_breakpoints.scss";
+@import "variables/_colors.scss";
+@import "variables/_typography.scss";
+
+// Mixins
+@import "mixins/_helpers.scss";
+@import "mixins/_fonts.scss";
+@import "mixins/_respond-to.scss";
+
+//Plugins
+@import "../../bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css";
+@import "../../bower_components/select2/src/scss/core.scss";
+
+// Basics
+@import "basic/_basic.scss";
+@import "basic/_grid.scss";
+
+// Form
+@import "blocks/form/_select.scss";
+@import "blocks/form/_input-range.scss";
+@import "blocks/form/_input-color.scss";
