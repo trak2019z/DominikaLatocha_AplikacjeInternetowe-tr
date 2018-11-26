@@ -9,28 +9,11 @@ requirejs({
         'ColorPicker': '../../bower_components/tinyColorPicker/jqColorPicker.min',
         'select2'    : '../../bower_components/select2/dist/js/select2.full.min'
     },
-    // shim: {
-    //     'jsb': {
-    //         exports: 'jsb',
-    //         deps: ['jquery']
-    //     },
-    //     'jquery-ui': {
-    //         exports: 'jquery-ui',
-    //         deps: ['jquery']
-    //     },
-    //     'nicescroll': {
-    //         exports: 'nicescroll',
-    //         deps: ['jquery']
-    //     },
-    //     'ColorPicker': {
-    //         exports: 'ColorPicker',
-    //         deps: ['jquery']
-    //     }
-    // },
     'include': [
         'app',
         'Detect',
         'CustomScroll',
-        'Custom'
+        'Custom',
+        'Editor'
     ]
 });

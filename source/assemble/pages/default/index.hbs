@@ -5,41 +5,15 @@ description:
 keywords:
 ---
 
-<div class="page-content">
 
-	<div class="grid">
-		<div class="grid__col desktop-3 tablet-6 mobile-12">
+<div class="editor jsb_ jsb_Editor" data-jsb='{"url":"./images/img.jpg"}'>
+	<div class="page-content">
 
-			{{!-- Select --}}
-			{{> select
-				NAME='select'
-				DATA=dataSelectExample
-			}}
-
-			{{!-- Input Range --}}
-			{{> input-range 
-                LABEL='Input Range'
-                RANGE='range'
-                NAME='range'
-                MIN='-100'
-                MAX='100'
-                VALUE='0'
-            }}
-
-            {{!-- Input Color --}}
-            {{> input-color 
-                LABEL='Input Color'
-                VALUE='#82399A'
-                NAME='color'
-                DATA=dataInputColorExample
-            }}
-
-		</div>
-		<div class="grid__col desktop-9 tablet-6 mobile-12">
-			&nbsp;
-		</div>
+		<div class="editor__canvas">
+            <canvas id="js-canvas"></canvas>
+        </div>
+		
 	</div>
-	
 </div>
 
 
