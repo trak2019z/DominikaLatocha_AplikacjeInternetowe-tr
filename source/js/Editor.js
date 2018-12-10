@@ -28,6 +28,9 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
             cornerSize          : 16
         };
 
+        self.cssMaxWidth    = 637;
+        self.cssMaxHeight   = 478;
+
 
         self.Init(); 
 
@@ -61,6 +64,7 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
 
         //Resize
         $(window).resize(function() {
+            console.log('resize');
            self.AdjustCanvasDimension();
         });
 
@@ -93,13 +97,10 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
 
     Editor.prototype.CalcMaxDimension = function(width, height) {
         var self = this,
-            //padding: 16px;
-            maxW = self.dom.width() -32,
-            maxH = self.dom.height() -32,
-            w    = maxW / width,
-            h    = maxH / height,
-            cssMaxWidth  = Math.min(width, maxW),
-            cssMaxHeight = Math.min(height, maxH);
+            w    = self.cssMaxWidth / width,
+            h    = self.cssMaxHeight / height,
+            cssMaxWidth  = Math.min(width, self.cssMaxWidth),
+            cssMaxHeight = Math.min(height, self.cssMaxHeight);
 
         if (w < 1 && w < h) {
             cssMaxWidth  = width * w;

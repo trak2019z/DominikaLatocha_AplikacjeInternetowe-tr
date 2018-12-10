@@ -14,6 +14,7 @@ requirejs({
         'Detect',
         'CustomScroll',
         'Custom',
-        'Editor'
+        'Editor',
+        'Tabs'
     ]
 });

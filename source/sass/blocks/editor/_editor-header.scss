@@ -1,0 +1,18 @@
+.editor-header{
+	padding-bottom:20px;
+
+	&__title{
+		color:$color-purple;
+		text-transform:uppercase;
+		@include font-bold;
+		font-size:20px;
+		line-height:24px;
+	}
+
+	&__description{
+		color:$color-white;
+		@include font-regular;
+		font-size:14px;
+		line-height:24px;
+	}
+}

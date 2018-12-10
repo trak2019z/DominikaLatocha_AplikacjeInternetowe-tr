@@ -25,11 +25,14 @@
 // Basics
 @import "basic/_basic.scss";
 @import "basic/_grid.scss";
+@import "basic/_tabs.scss";
 
 // Form
 @import "blocks/form/_select.scss";
 @import "blocks/form/_input-range.scss";
 @import "blocks/form/_input-color.scss";
+@import "blocks/form/_btn.scss";
 
 //Editor
 @import "blocks/editor/_editor.scss";
+@import "blocks/editor/_editor-header.scss";

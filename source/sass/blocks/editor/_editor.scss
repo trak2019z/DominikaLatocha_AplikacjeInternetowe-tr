@@ -1,12 +1,18 @@
 .editor{
 	height:100%;
+	padding:20px 0;
 
 	&__canvas{
-		height: 100%;
-        padding: 16px;
+		padding: 10px;
+		height: 500px;
+	    border: 1px solid $color-purple;
+	    border-radius: 16px;
+	    box-sizing: border-box;
 	}
 
 	.canvas-container{
     	margin: auto;
+    	top:50%;
+    	@include t(translateY(-50%));
     }
 }

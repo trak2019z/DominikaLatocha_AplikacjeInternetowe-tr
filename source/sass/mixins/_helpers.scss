@@ -77,3 +77,22 @@
         margin: 6px 0;
     }
 }
+
+/*
+ *
+ *  Clearfix
+ *
+ */
+
+@mixin clearfix {
+    display: block;
+
+    &:after {
+        visibility: hidden;
+        display: block;
+        clear: both;
+        height: 0;
+        font-size: 0;
+        content: "";
+    }
+}

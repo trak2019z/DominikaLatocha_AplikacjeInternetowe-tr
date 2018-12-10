@@ -80,3 +80,21 @@ html, body {
     	border-color: transparent $color-body !important;
     }
 }
+
+/*
+ *
+ *  To left/right/center
+ *
+ */
+
+.to-left{
+    text-align: left;
+}
+
+.to-right{
+    text-align: right;
+}
+
+.to-center{
+    text-align: center;
+}
