@@ -89,6 +89,10 @@ define("Custom", ['jquery', 'ColorPicker', 'select2', 'CustomScroll', 'TrackColo
             range= el.data('range'),
             input= self.el.find('.'+self.class.range+'[data-range='+range+']');
 
+        if(isNaN(val)){
+            val = 0;
+        }
+
         val = self.ReturnVal(input, val);
 
         el.val(val);
@@ -106,7 +110,10 @@ define("Custom", ['jquery', 'ColorPicker', 'select2', 'CustomScroll', 'TrackColo
             opacity         : false,
             animationSpeed  : 0,
             dark            : '#000000',
-            light           : '#FFFFFF'
+            light           : '#FFFFFF',
+            renderCallback: function(elem, toggled) {
+                elem.trigger('color-change');
+            }
         });  
     };
 

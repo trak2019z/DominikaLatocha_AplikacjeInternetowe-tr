@@ -4,10 +4,10 @@
 	
 	<div class="input-color__box">
 		{{#each DATA}}
-		<div class="input-color__box__item" style="background-color:{{this}};" data-color="{{this}}"></div>
+		<div class="input-color__box__item {{../CLASS}}-item" style="background-color:{{this}};" data-color="{{this}}"></div>
 		{{/each}}
 	</div>
 	
-	<input type="text" class="input-color__input js-color-picker" name="{{NAME}}" value="{{VALUE}}"/>
+	<input type="text" class="input-color__input js-color-picker {{CLASS}}" name="{{NAME}}" value="{{VALUE}}"/>
 </div>
 <!-- input-color - end -->

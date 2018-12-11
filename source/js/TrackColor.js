@@ -18,6 +18,7 @@ define("TrackColor", ['jquery'], function($)
 
     };
 
+
     //Set Track Color
     TrackColor.prototype.SetTrackColor = function(el){
         var self = this,

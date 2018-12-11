@@ -1,13 +1,13 @@
 <!-- input-range - start -->
-<div class="photo-range">
+<div class="input-range">
 	<p class="input-range__label">{{LABEL}}</p>
 	<div class="input-range__box">
 
-		<input class="input-range__range js-range" name="{{NAME}}" type="range" min="{{MIN}}" value="{{VALUE}}" max="{{MAX}}" data-range="{{RANGE}}">
-		<div class="input-range__range__track js-range-track"></div>
+		<input class="input-range__range js-range {{CLASS}}" name="{{NAME}}" type="range" min="{{MIN}}" value="{{VALUE}}" max="{{MAX}}" data-range="{{RANGE}}">
+		<div class="input-range__range__track js-range-track {{CLASS}}"></div>
 		
     	<div class="input-range__value">
-    		<input type="text" class="input-range__input js-range-text" value="{{VALUE}}" data-range="{{RANGE}}">
+    		<input type="text" class="input-range__input js-range-text {{CLASS}}" value="{{VALUE}}" data-range="{{RANGE}}">
     	</div>
 
 	</div>

@@ -1,4 +1,4 @@
-define("Editor", ['jquery', 'fabric'], function($, fabric)
+define("Editor", ['jquery', 'fabric', 'EditorFilter'], function($, fabric, EditorFilter)
 {
     "use strict";
 
@@ -13,9 +13,6 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
 
         // element
         self.dom     = $(dom_element);
-        self.element = {
-            
-        };
 
         self.url            = options.url;
         self.canvasImage    = '';
@@ -36,6 +33,7 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
 
     };
 
+
     Editor.prototype.Init = function(){
         var self = this;
 
@@ -48,12 +46,17 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
             }
         );
 
+        //Image
+        self.photoImage = new EditorFilter(self.dom, self.canvas);
+
         //Init Image
         fabric.Image.fromURL(self.url, function(img) {
             self.canvasImage = img;
 
             self.AdjustCanvasDimension();
             self.canvas.add(self.canvasImage).setActiveObject(self.canvasImage);
+
+            self.photoImage.Init(img);
         });
 
         //Init Edit Options
@@ -64,11 +67,11 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
 
         //Resize
         $(window).resize(function() {
-            console.log('resize');
            self.AdjustCanvasDimension();
         });
 
     };
+
 
     //Image Dimension
     Editor.prototype.AdjustCanvasDimension = function () {
@@ -94,6 +97,7 @@ define("Editor", ['jquery', 'fabric'], function($, fabric)
         self.canvasImage = canvasImage;
         self.canvas.centerObject(self.canvasImage);
     };
+
 
     Editor.prototype.CalcMaxDimension = function(width, height) {
         var self = this,

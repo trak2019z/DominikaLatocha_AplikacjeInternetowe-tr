@@ -1,0 +1,47 @@
+[
+	{
+		"LABEL"	:	"Jasność",
+        "RANGE"	:	"brightness", 
+        "MIN"	:	"-100",
+        "MAX"	:	"100",
+        "VALUE"	:	"0",
+        "CLASS" :   "js-range-filter",
+        "NAME"  :   "brightness"
+    },
+    {
+    	"LABEL"	:	"Kontrast",
+        "RANGE"	:	"contrast", 
+        "MIN"	:	"-100",
+        "MAX"	:	"100",
+        "VALUE"	:	"0",
+        "CLASS" :   "js-range-filter",
+        "NAME"  :   "contrast"
+    },
+    {
+    	"LABEL"	:	"Nasycenie",
+        "RANGE"	:	"saturation", 
+        "MIN"	:	"-100",
+        "MAX"	:	"100",
+        "VALUE"	:	"0",
+        "CLASS" :   "js-range-filter",
+        "NAME"  :   "saturation"
+    },
+    {
+        "LABEL" :   "Rozmycie",
+        "RANGE" :   "blur", 
+        "MIN"   :   "0",
+        "MAX"   :   "100",
+        "VALUE" :   "0",
+        "CLASS" :   "js-range-filter",
+        "NAME"  :   "blur"
+    },
+    {
+    	"LABEL"	:	"Barwa",
+        "RANGE"	:	"hue",
+        "MIN"	:	"-100",
+        "MAX"	:	"100",
+        "VALUE"	:	"0",
+        "CLASS" :   "hue js-range-filter",
+        "NAME"  :   "hue"
+    }
+]
