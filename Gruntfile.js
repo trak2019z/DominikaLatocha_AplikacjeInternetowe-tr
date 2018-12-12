@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -63,34 +63,6 @@ module.exports = function(grunt) {
                     {
                         cwd: '<%= paths.src %>/assemble/pages/default/',
                         dest: '<%= paths.dist %>/',
-                        expand: true,
-                        flatten: true,
-                        src: ['*.hbs']
-                    }
-                ]
-            },
-            modal: {
-                options: {
-                    production: true
-                },
-                files: [
-                    {
-                        cwd: '<%= paths.src %>/assemble/pages/modal/',
-                        dest: '<%= paths.dist %>/modal/',
-                        expand: true,
-                        flatten: true,
-                        src: ['*.hbs']
-                    }
-                ]
-            },
-            item: {
-                options: {
-                    production: true
-                },
-                files: [
-                    {
-                        cwd: '<%= paths.src %>/assemble/pages/item/',
-                        dest: '<%= paths.dist %>/item/',
                         expand: true,
                         flatten: true,
                         src: ['*.hbs']

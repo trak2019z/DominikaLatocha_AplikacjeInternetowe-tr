@@ -1,4 +1,4 @@
-define("Editor", ['jquery', 'fabric', 'EditorFilter'], function($, fabric, EditorFilter)
+define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, fabric, EditorFilter, b64toBlob)
 {
     "use strict";
 
@@ -8,11 +8,18 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter'], function($, fabric, Edito
 
         // class
         self.class   = {
-            canvas      : 'js-canvas'
+            canvas      : 'js-canvas',
+            reset       : 'js-reset',
+            download    : 'js-download'
         };
 
         // element
         self.dom     = $(dom_element);
+
+        self.element = {
+            reset       : self.dom.find('.'+self.class.reset),
+            download    : self.dom.find('.'+self.class.download)
+        };
 
         self.url            = options.url;
         self.canvasImage    = '';
@@ -66,10 +73,77 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter'], function($, fabric, Edito
         });
 
         //Resize
-        $(window).resize(function() {
-           self.AdjustCanvasDimension();
+        // $(window).resize(function() {
+        //     console.log('resize');
+        //    self.AdjustCanvasDimension();
+        // });
+
+        //Reset
+        self.element.reset.on('click', function(e){
+            e.preventDefault();
+            self.Reset();
         });
 
+        //Download
+        self.element.download.on('click', function(e){
+            e.preventDefault();
+            self.Download();
+        });
+
+
+    };
+
+    //Reset Image
+    Editor.prototype.Reset = function(){
+        var self    = this;
+
+        window.location.reload();
+    };
+
+    //Download Image
+    Editor.prototype.Download = function(){
+        var self    = this,
+            file    = 'image.jpeg';
+
+        //Create New Url
+        var newUrl  = self.Blob(),
+            blob    = newUrl.blob,
+            blobUrl = newUrl.blobUrl;
+
+        if (window.navigator.msSaveBlob){
+            //IE
+            window.navigator.msSaveBlob(blob, file);
+        }
+        else{
+            //Chrome, Mozilla Firefox, Opera
+            var a       = document.createElement("a");
+
+            a.download  = file;
+            a.href      = blobUrl;
+
+            self.dom.append(a);
+            a.click();
+            $(a).remove(); 
+        }
+        
+    };
+
+    //Blob Url
+    Editor.prototype.Blob = function(){
+        var self    = this;
+
+        //Create New Url
+        var url     = self.canvas.toDataURL({format: 'jpeg', quality: 1.0 }),
+            data    = url.replace('data:image/jpeg;base64,', '');
+
+        var blob    = b64toBlob(data, 'image/jpeg');
+        var blobUrl = URL.createObjectURL(blob);
+
+        return {
+            url     : url,
+            blob    : blob,
+            blobUrl : blobUrl
+        }
     };
 
 
