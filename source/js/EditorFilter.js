@@ -12,13 +12,15 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
         //class
         self.class   = {
             range       : 'js-range-filter',
-            colorBack   : 'js-color-back'
+            colorBack   : 'js-color-back',
+            effect      : 'js-effect'
         };
 
         // element
         self.element = {
             range       : self.dom.find('.'+self.class.range),
-            colorBack   : self.dom.find('.'+self.class.colorBack)
+            colorBack   : self.dom.find('.'+self.class.colorBack),
+            effect      : self.dom.find('.'+self.class.effect)
         };
 
     };
@@ -42,6 +44,13 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
         self.element.colorBack.on('color-change', function() {
             var el = $(this);
             self.SetBackgroundColor(el);
+        });
+
+        //Image Effects
+        self.InitEffects();
+        self.element.effect.on('click', function(){
+            var el = $(this);
+            self.SetEffect(el, false);
         });
 
     };
@@ -117,6 +126,84 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
 
         self.canvas.backgroundColor = val;
         self.canvas.requestRenderAll();
+    };
+
+
+    //Image Init Effects
+    EditorFilter.prototype.InitEffects = function(){
+        var self = this, temp = 0;
+
+        self.element.effect.each(function(){
+            var el = $(this);
+            self.SetEffect(el, true);
+        });
+    };
+
+    //Image Set Effect
+    EditorFilter.prototype.SetEffect = function(el, init){
+        var self    = this, n,
+            attr    = el.attr('data-effect'),
+            active  = el.hasClass('active');
+
+        if(!init){
+            (active)? el.removeClass('active') : el.addClass('active');
+            active = !active;
+        }
+
+        switch(attr){
+
+            case 'sepia':
+                n = 5;
+                self.ApplyFilter(n, (active || init) && new self.filters.Sepia());
+                break;
+
+            case 'brownie':
+                n = 6;
+                self.ApplyFilter(n, (active || init) && new self.filters.Brownie());
+                break;
+
+            case 'grayscale':
+                n = 7;
+                self.ApplyFilter(n, (active || init) && new self.filters.Grayscale());
+                break;
+
+            case 'vintage':
+                n = 8;
+                self.ApplyFilter(n, (active || init) && new self.filters.Vintage());
+                break;
+
+            case 'technicolor':
+                n = 9;
+                self.ApplyFilter(n, (active || init) && new self.filters.Technicolor());
+                break;
+
+            case 'polaroid':
+                n = 10;
+                self.ApplyFilter(n, (active || init) && new self.filters.Polaroid());
+                break;
+
+            case 'kodachrome':
+                n = 11;
+                self.ApplyFilter(n, (active || init) && new self.filters.Kodachrome());
+                break;
+
+            case 'sharpen':
+                n = 12;
+                self.ApplyFilter(n, (active || init) && new self.filters.Convolute({
+                  matrix: [  0, -1,  0,
+                            -1,  5, -1,
+                             0, -1,  0 ]
+                }));
+                break;
+
+        }
+
+        var url = self.canvas.toDataURL({format: 'jpeg', quality: 0.5 });
+        if(init) el.css('background-image', 'url('+url+')');
+
+        if((active === false)){
+            self.ApplyFilter(n, false);
+        }
     };
 
     return EditorFilter;
