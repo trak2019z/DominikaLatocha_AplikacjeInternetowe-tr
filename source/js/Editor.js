@@ -1,4 +1,4 @@
-define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, fabric, EditorFilter, b64toBlob)
+define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob'], function($, fabric, EditorFilter, EditorText, b64toBlob)
 {
     "use strict";
 
@@ -22,6 +22,7 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, 
         };
 
         self.url            = options.url;
+        self.enterText      = options.enterText;
         self.canvasImage    = '';
 
         self.editOptions    = {
@@ -54,7 +55,10 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, 
         );
 
         //Image
-        self.photoImage = new EditorFilter(self.dom, self.canvas);
+        self.editorImage = new EditorFilter(self.dom, self.canvas);
+
+        //Text
+        self.editorText  = new EditorText(self.dom, self.enterText, self.canvas);
 
         //Init Image
         fabric.Image.fromURL(self.url, function(img) {
@@ -63,7 +67,9 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, 
             self.AdjustCanvasDimension();
             self.canvas.add(self.canvasImage).setActiveObject(self.canvasImage);
 
-            self.photoImage.Init(img);
+            self.canvasImage.id = 0;
+
+            self.editorImage.Init(img);
         });
 
         //Init Edit Options
@@ -88,6 +94,17 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'b64toBlob'], function($, 
         self.element.download.on('click', function(e){
             e.preventDefault();
             self.Download();
+        });
+
+        //Delete Active Object
+        $('html').keyup(function(e){
+            if(e.keyCode == 46) {
+                var active = self.canvas.getActiveObject();
+                if(active.id === undefined){
+                    self.canvas.remove(active);
+                    self.editorText.ClearActiveText();
+                } 
+            }
         });
 
 

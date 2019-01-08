@@ -1,4 +1,4 @@
-<div class="editor jsb_ jsb_Editor" data-jsb='{"url":"./images/img.jpg"}'>
+<div class="editor jsb_ jsb_Editor" data-jsb='{"url":"./images/img.jpg", "enterText":"Wpisz tekst"}'>
 	<div class="page-content">
 
 		{{> editor-header }}
@@ -82,6 +82,37 @@
 
                         	<!-- CONTENT - start -->
                             <div class="tabs__body__content js-edit-photo-text">  
+
+                                {{> editor-text }}
+
+                                {{> select
+                                    DATA=dataEditorFont
+                                    LABEL='Czcionka'
+                                    CLASS='js-font'
+                                    NAME='font'
+                                }}
+
+                                {{> input-range 
+                                    LABEL='Rozmiar'
+                                    RANGE='size'
+                                    MIN='0'
+                                    MAX='200'
+                                    VALUE='100'
+                                    CLASS='js-range-size'
+                                    NAME='size'
+                                }}
+
+                                {{> input-color 
+                                    LABEL='Paleta kolorów'
+                                    VALUE='#000000'
+                                    CLASS='js-text-color'
+                                    NAME='text-color'
+                                    DATA=dataEditorTextColor
+                                    PALETTE=true
+                                }}
+
+                                <div class="visuallyhidden js-font-hidden">visuallyhidden</div>
+
                             </div>
                             <!-- CONTENT - end -->
 

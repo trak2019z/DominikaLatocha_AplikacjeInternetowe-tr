@@ -1,0 +1,258 @@
+[   
+    {
+        "LABEL"    : "AbrilFatface Regular",
+        "VALUE"    : "AbrilFatface-Regular"
+    },
+    {
+        "LABEL"    : "AmaticSC Bold",
+        "VALUE"    : "AmaticSC-Bold"
+    },
+    {
+        "LABEL"    : "AmaticSC Regular",
+        "VALUE"    : "AmaticSC-Regular"
+    },
+    {
+        "LABEL"    : "Cinzel Black",
+        "VALUE"    : "Cinzel-Black"
+    },
+    {
+        "LABEL"    : "Cinzel Bold",
+        "VALUE"    : "Cinzel-Bold"
+    },
+    {
+        "LABEL"    : "Cinzel Regular",
+        "VALUE"    : "Cinzel-Regular"
+    },
+    {
+        "LABEL"    : "CutiveMono Regular",
+        "VALUE"    : "CutiveMono-Regular"
+    },
+    {
+        "LABEL"    : "DancingScript Bold",
+        "VALUE"    : "DancingScript-Bold"
+    },
+    {
+        "LABEL"    : "DancingScript Regular",
+        "VALUE"    : "DancingScript-Regular"
+    },
+    {
+        "LABEL"    : "EBGaramond Bold",
+        "VALUE"    : "EBGaramond-Bold"
+    },
+    {
+        "LABEL"    : "EBGaramond Regular",
+        "VALUE"    : "EBGaramond-Regular"
+    },
+    {
+        "LABEL"    : "Elsie Black",
+        "VALUE"    : "Elsie-Black"
+    },
+    {
+        "LABEL"    : "Elsie Regular",
+        "VALUE"    : "Elsie-Regular"
+    },
+    {
+        "LABEL"    : "JosefinSans Bold",
+        "VALUE"    : "JosefinSans-Bold"
+    },
+    {
+        "LABEL"    : "JosefinSans Light",
+        "VALUE"    : "JosefinSans-Light"
+    },
+    {
+        "LABEL"    : "JosefinSans Regular",
+        "VALUE"    : "JosefinSans-Regular"
+    },
+    {
+        "LABEL"    : "Lato Black",
+        "VALUE"    : "Lato-Black"
+    },
+    {
+        "LABEL"    : "Lato Bold",
+        "VALUE"    : "Lato-Bold"
+    },
+    {
+        "LABEL"    : "Lato Hairline",
+        "VALUE"    : "Lato-Hairline"
+    },
+    {
+        "LABEL"    : "Lato Light",
+        "VALUE"    : "Lato-Light"
+    },
+    {
+        "LABEL"    : "Lato Regular",
+        "VALUE"    : "Lato-Regular"
+    },
+    {
+        "LABEL"    : "LifeSavers Bold",
+        "VALUE"    : "LifeSavers-Bold"
+    },
+    {
+        "LABEL"    : "LifeSavers Regular",
+        "VALUE"    : "LifeSavers-Regular"
+    },
+    {
+        "LABEL"    : "Limelight Regular",
+        "VALUE"    : "Limelight-Regular"
+    },
+    {
+        "LABEL"    : "LoversQuarrel Regular",
+        "VALUE"    : "LoversQuarrel-Regular"
+    },
+    {
+        "LABEL"    : "MontserratAlternates Bold",
+        "VALUE"    : "MontserratAlternates-Bold"
+    },
+    {
+        "LABEL"    : "MontserratAlternates Light",
+        "VALUE"    : "MontserratAlternates-Light"
+    },
+    {
+        "LABEL"    : "MontserratAlternates Regular",
+        "VALUE"    : "MontserratAlternates-Regular"
+    },
+    {
+        "LABEL"    : "Montserrat Bold",
+        "VALUE"    : "Montserrat-Bold"
+    },
+    {
+        "LABEL"    : "Montserrat Medium",
+        "VALUE"    : "Montserrat-Medium"
+    },
+    {
+        "LABEL"    : "Montserrat Regular",
+        "VALUE"    : "Montserrat-Regular"
+    },
+    {
+        "LABEL"    : "Montserrat SemiBold",
+        "VALUE"    : "Montserrat-SemiBold"
+    },
+    {
+        "LABEL"    : "Nosifer Regular",
+        "VALUE"    : "Nosifer-Regular"
+    },
+    {
+        "LABEL"    : "Oranienbaum Regular",
+        "VALUE"    : "Oranienbaum-Regular"
+    },
+    {
+        "LABEL"    : "Oswald Bold",
+        "VALUE"    : "Oswald-Bold"
+    },
+    {
+        "LABEL"    : "Oswald Light",
+        "VALUE"    : "Oswald-Light"
+    },
+    {
+        "LABEL"    : "Oswald Regular",
+        "VALUE"    : "Oswald-Regular"
+    },
+    {
+        "LABEL"    : "Pacifico Regular",
+        "VALUE"    : "Pacifico-Regular"
+    },
+    {
+        "LABEL"    : "Pattaya Regular",
+        "VALUE"    : "Pattaya-Regular"
+    },
+    {
+        "LABEL"    : "Playball Regular",
+        "VALUE"    : "Playball-Regular"
+    },
+    {
+        "LABEL"    : "PlayfairDisplay Black",
+        "VALUE"    : "PlayfairDisplay-Black"
+    },
+    {
+        "LABEL"    : "PlayfairDisplay Bold",
+        "VALUE"    : "PlayfairDisplay-Bold"
+    },
+    {
+        "LABEL"    : "PlayfairDisplay Regular",
+        "VALUE"    : "PlayfairDisplay-Regular"
+    },
+    {
+        "LABEL"    : "Quicksand Bold",
+        "VALUE"    : "Quicksand-Bold"
+    },
+    {
+        "LABEL"    : "Quicksand Light",
+        "VALUE"    : "Quicksand-Light"
+    },
+    {
+        "LABEL"    : "Quicksand Medium",
+        "VALUE"    : "Quicksand-Medium"
+    },
+    {
+        "LABEL"    : "Quicksand Regular",
+        "VALUE"    : "Quicksand-Regular"
+    },
+    {
+        "LABEL"    : "Raleway Black",
+        "VALUE"    : "Raleway-Black"
+    },
+    {
+        "LABEL"    : "Raleway Bold",
+        "VALUE"    : "Raleway-Bold"
+    },
+    {
+        "LABEL"    : "Raleway Light",
+        "VALUE"    : "Raleway-Light"
+    },
+    {
+        "LABEL"    : "Raleway Regular",
+        "VALUE"    : "Raleway-Regular"
+    },
+    {
+        "LABEL"    : "Raleway Thin",
+        "VALUE"    : "Raleway-Thin"
+    },
+    {
+        "LABEL"    : "Righteous Regular",
+        "VALUE"    : "Righteous-Regular"
+    },
+    {
+        "LABEL"    : "RumRaisin Regular",
+        "VALUE"    : "RumRaisin-Regular"
+    },
+    {
+        "LABEL"    : "Sacramento Regular",
+        "VALUE"    : "Sacramento-Regular"
+    },
+    {
+        "LABEL"    : "Sail Regular",
+        "VALUE"    : "Sail-Regular"
+    },
+    {
+        "LABEL"    : "SeaweedScript Regular",
+        "VALUE"    : "SeaweedScript-Regular"
+    },
+    {
+        "LABEL"    : "ShadowsIntoLightTwo Regular",
+        "VALUE"    : "ShadowsIntoLightTwo-Regular"
+    },
+    {
+        "LABEL"    : "Srisakdi Bold",
+        "VALUE"    : "Srisakdi-Bold"
+    },
+    {
+        "LABEL"    : "Srisakdi Regular",
+        "VALUE"    : "Srisakdi-Regular"
+    },
+    {
+        "LABEL"    : "WorkSans Bold",
+        "VALUE"    : "WorkSans-Bold"
+    },
+    {
+        "LABEL"    : "WorkSans Medium",
+        "VALUE"    : "WorkSans-Medium"
+    },
+    {
+        "LABEL"    : "WorkSans Regular",
+        "VALUE"    : "WorkSans-Regular"
+    },
+    { 
+        "LABEL"    : "WorkSans SemiBold",
+        "VALUE"    : "WorkSans-SemiBold"
+    }
+]
