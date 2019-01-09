@@ -12,16 +12,21 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
         //class
         self.class   = {
             range       : 'js-range-filter',
-            colorBack   : 'js-color-back',
-            effect      : 'js-effect'
+            colorBackP  : 'js-color-back',
+            colorBack   : 'js-color-back-item',
+            effect      : 'js-effect',
+            active      : 'active'
         };
 
         // element
         self.element = {
             range       : self.dom.find('.'+self.class.range),
+            colorBackP  : self.dom.find('.'+self.class.colorBackP),
             colorBack   : self.dom.find('.'+self.class.colorBack),
             effect      : self.dom.find('.'+self.class.effect)
         };
+
+        self.activeBackColor= '';
 
     };
 
@@ -40,11 +45,21 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
         });
 
         //Canvas Background
-        self.canvas.backgroundColor = self.element.colorBack.val();
-        self.element.colorBack.on('color-change', function() {
+        self.canvas.backgroundColor = self.element.colorBackP.val();
+        self.element.colorBackP.addClass('active');
+        self.element.colorBack.on('click', function(){
             var el = $(this);
+            self.activeBackColor = el;
             self.SetBackgroundColor(el);
         });
+
+        self.element.colorBackP.on('color-change', function() {
+            var el = $(this);
+            self.element.colorBack.removeClass(self.class.active);
+            self.activeBackColor = '';
+            self.SetBackgroundColor(el);
+        });
+
 
         //Image Effects
         self.InitEffects();
@@ -122,10 +137,18 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
     //Set Background Color
     EditorFilter.prototype.SetBackgroundColor = function(el){
         var self    = this,
-            val     = el.val();
+            val;
 
-        self.canvas.backgroundColor = val;
-        self.canvas.requestRenderAll();
+        self.element.colorBack.removeClass(self.class.active);
+        self.element.colorBackP.removeClass(self.class.active);
+        el.addClass(self.class.active);
+
+        (self.activeBackColor !== '')? val = el.data("color") : val = el.val();
+
+        if(val !== undefined){
+            self.canvas.backgroundColor = val;
+            self.canvas.requestRenderAll();
+        }
     };
 
 

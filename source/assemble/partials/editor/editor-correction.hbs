@@ -1,0 +1,25 @@
+<!-- editor-correction - start -->
+<div class="editor-correction">
+
+	{{#each DATA}}
+	    {{> input-range 
+	        LABEL=LABEL
+	        RANGE=RANGE
+	        MIN=MIN
+	        MAX=MAX
+	        VALUE=VALUE
+	        CLASS=CLASS
+	        NAME=NAME
+	    }}
+	{{/each}}
+
+	{{> input-color 
+	    LABEL='Tło'
+	    VALUE='#000000'
+	    CLASS='js-color-back'
+	    NAME='color-back'
+	    DATA=DATA_COLOR
+	}}
+
+</div>
+<!-- editor-correction - end -->

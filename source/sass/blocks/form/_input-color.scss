@@ -15,8 +15,13 @@
 		line-height: 16px;
 		height: 16px;
 		padding:12px 0;
-		border: 1px solid rgba($color-purple, 0.3);
+		border: 2px solid rgba($color-purple, 0);
 		text-align: center;
+		@include a(border 0.3s ease);
+
+		&.active{
+			border: 2px solid rgba($color-purple, 1);
+		}
 	}
 
 	&__box{
@@ -25,9 +30,9 @@
 
 		&__item{
 			display: inline-block;
-			width:24px;
-			height:24px;
-			border: 1px solid rgba($color-purple, 0.3);
+			width:23px;
+			height:23px;
+			border: 2px solid rgba($color-purple, 0);
 			margin-right: 8px;
 			margin-bottom: 8px;
 			border-radius: 4px;
@@ -35,6 +40,12 @@
 
 			&:nth-child(8n){
 				margin-right: 0;
+			}
+
+			@include a(border 0.3s ease);
+
+			&.active{
+				border: 2px solid rgba($color-purple, 1);
 			}
 		}
 

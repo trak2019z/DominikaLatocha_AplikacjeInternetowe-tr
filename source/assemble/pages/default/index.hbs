@@ -5,6 +5,91 @@ description:
 keywords:
 ---
 
+<div class="editor jsb_ jsb_Editor" data-jsb='{"url":"./images/img.jpg", "enterText":"Wpisz tekst"}'>
+	<div class="page-content">
+
+		{{> editor-header }}
+
+		<ul class="grid">
+            <li class="grid__col desktop-4">
+                
+                <div class="tabs jsb_ jsb_Tabs">
+                    <!--head - start -->
+                    <ul class="tabs__head">
+
+                    	{{#each dataEditorTabs}}
+                        <li class="tabs__head__item">
+                            <a href="javascript:void(0);" class="tabs__head__link js-tabs--head {{#if ACTIVE}}active{{/if}}" data-tab="{{TAB}}">{{LABEL}}</a>
+                        </li>
+                        {{/each}}
+
+                    </ul>
+                    <!--head - end -->
+
+                    <!--body - start -->
+                    <ul class="tabs__body">
+
+                    	{{#each dataEditorTabs}}
+                        <li class="tabs__body__item js-tabs--body jsb_ jsb_CustomScroll" data-tab="{{TAB}}">
+
+                        	<!-- CONTENT - start -->
+                            <div class="tabs__body__content">
+
+                            	{{#compare TAB "==" "correction"}}
+	                            	{{> editor-correction
+	                            		DATA=../dataEditorRange
+	                            		DATA_COLOR=../dataEditorTextColor
+	                            	}}
+	                            {{/compare}}
+
+	                            {{#compare TAB "==" "effects"}}
+	                            	{{> editor-effect 
+	                            		DATA=../dataEditorEffect 
+	                            	}}
+	                            {{/compare}}
+
+	                            {{#compare TAB "==" "shapes"}}
+
+
+	                            {{/compare}}
+
+	                            {{#compare TAB "==" "text"}}
+
+	                            	{{> editor-text
+	                            		DATA_FONT=../dataEditorFont
+	                            		DATA_COLOR=../dataEditorTextColor
+	                            	}}
+
+	                            {{/compare}}
+
+	                            {{#compare TAB "==" "brush"}}
+
+
+	                            {{/compare}}
+
+                            </div>
+                            <!-- CONTENT - end -->
+
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <!--body - end -->
+
+                </div>
+
+                
+            </li>
+            <li class="grid__col desktop-8">
+                
+                <div class="editor__canvas">
+		            <canvas id="js-canvas"></canvas>
+		        </div>
+
+            </li>
+        </ul>
+
+	</div>
+</div>
 
 
 

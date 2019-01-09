@@ -1,6 +1,36 @@
 <!-- editor-text - start -->
-<div class="editor-text js-btn-text">
-	<span class="editor-text__icon">+</span>
-	<p class="editor-text__label">Dodaj tekst</p>
+<div class="editor-text">
+
+	{{> btn-block
+		CLASS='js-btn-text'
+		LABEL='Dodaj tekst'
+	}}
+
+    {{> select
+        DATA=DATA_FONT
+        LABEL='Czcionka'
+        CLASS='js-font'
+        NAME='font'
+    }}
+
+    {{> input-range 
+        LABEL='Rozmiar'
+        RANGE='size'
+        MIN='0'
+        MAX='200'
+        VALUE='100'
+        CLASS='js-range-size'
+        NAME='size'
+    }}
+
+    {{> input-color 
+        LABEL='Paleta kolorów'
+        VALUE='#000000'
+        CLASS='js-text-color'
+        NAME='text-color'
+        DATA=DATA_COLOR
+    }}
+
+    <div class="visuallyhidden js-font-hidden">visuallyhidden</div>
 </div>
 <!-- editor-text - end -->

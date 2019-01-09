@@ -1,0 +1,27 @@
+[
+	{	
+		"LABEL"	: "Korekty",
+		"TAB"	: "correction",
+		"ACTIVE": true
+	},
+	{	
+		"LABEL"	: "Filtry",
+		"TAB"	: "effects",
+		"ACTIVE": false
+	},
+	{	
+		"LABEL"	: "Naklejki",
+		"TAB"	: "shapes",
+		"ACTIVE": false
+	},
+	{	
+		"LABEL"	: "Napisy",
+		"TAB"	: "text",
+		"ACTIVE": false
+	},
+	{	
+		"LABEL"	: "Pędzel",
+		"TAB"	: "brush",
+		"ACTIVE": false
+	}
+]
