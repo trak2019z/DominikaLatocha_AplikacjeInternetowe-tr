@@ -10,7 +10,7 @@
 		position:absolute;
 		left:30px;
 		top:1px;
-		@include font-medium;
+		@include font-regular;
 		font-size: 38px;
 		line-height: 64px;
 		color:$color-purple;
@@ -21,6 +21,6 @@
 		line-height: 16px;
 		padding: 25px 0px 25px 85px;
 		color:$color-grey-3;
-		@include font-semibold;
+		@include font-regular;
 	}
 }

@@ -2,11 +2,13 @@
 <div class="input-color">
 	<p class="input-color__label">{{LABEL}}</p>
 	
+	{{#if PALETTE}}
 	<div class="input-color__box">
 		{{#each DATA}}
 		<div class="input-color__box__item {{../CLASS}}-item" style="background-color:{{this}};" data-color="{{this}}"></div>
 		{{/each}}
 	</div>
+	{{/if}}
 	
 	<input type="text" class="input-color__input js-color-picker {{CLASS}}" name="{{NAME}}" value="{{VALUE}}"/>
 </div>

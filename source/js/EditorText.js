@@ -126,7 +126,7 @@ define("EditorText", ['jquery','fabric'], function($, fabric)
 
             self.canvas.add(text).setActiveObject(text);
             self.canvas.centerObject(text).requestRenderAll();
-        },100);
+        },300);
 
     };
 
@@ -167,7 +167,7 @@ define("EditorText", ['jquery','fabric'], function($, fabric)
         setTimeout(function(){
             self.activeText.set("fontFamily", val);
             self.canvas.requestRenderAll();
-        },100);
+        },300);
     };
 
     //Text Set Color

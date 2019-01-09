@@ -20,6 +20,8 @@ define("Tabs", ['jsb', 'jquery'], function(jsb, $)
 
             self.Toggle(tab);
 
+            $('body').trigger('tab-change', [tab]);
+
         });
 
         self.el.find(self.linkClass+'.'+self.activeClass).click();

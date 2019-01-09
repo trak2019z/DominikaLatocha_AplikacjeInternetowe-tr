@@ -1,0 +1,61 @@
+<!-- editor-brush - start -->
+<div class="editor-brush">
+
+    {{> select
+        DATA=DATA_BRUSH
+        LABEL='Ślad pędzla'
+        CLASS='js-brush'
+        NAME='brush'
+    }}
+
+    {{> input-range 
+        LABEL='Rozmiar'
+        RANGE='brush-size'
+        MIN='0'
+        MAX='150'
+        VALUE='50'
+        CLASS='js-range-brush'
+        NAME='brush-size'
+        UNIT=''
+    }}
+
+    {{> input-color 
+        LABEL='Kolor pędzla'
+        VALUE='#FF387A'
+        CLASS='js-brush-color'
+        NAME='brush-color'
+        DATA=DATA_COLOR
+    }}
+
+    {{> input-color 
+        LABEL='Kolor cienia'
+        VALUE='#481F67'
+        CLASS='js-shadow-color'
+        NAME='shadow-color'
+        DATA=DATA_COLOR
+    }}
+
+    {{> input-range 
+        LABEL='Rozmiar cienia'
+        RANGE='shadow-size'
+        MIN='0'
+        MAX='50'
+        VALUE='0'
+        CLASS='js-range-brush'
+        NAME='shadow-size'
+        UNIT=''
+    }}
+
+    {{> input-range 
+        LABEL='Odległość cienia'
+        RANGE='shadow-length'
+        MIN='0'
+        MAX='50'
+        VALUE='0'
+        CLASS='js-range-brush'
+        NAME='shadow-length'
+        UNIT=''
+    }}
+
+</div>
+<!-- editor-brush - end -->

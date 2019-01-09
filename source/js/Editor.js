@@ -1,4 +1,4 @@
-define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob'], function($, fabric, EditorFilter, EditorText, b64toBlob)
+define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'EditorBrush', 'b64toBlob'], function($, fabric, EditorFilter, EditorText, EditorBrush, b64toBlob)
 {
     "use strict";
 
@@ -10,18 +10,19 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
         self.class   = {
             canvas      : 'js-canvas',
             reset       : 'js-reset',
-            download    : 'js-download'
+            download    : 'js-download',
+            file        : 'js-file'
         };
 
         // element
         self.dom     = $(dom_element);
 
         self.element = {
-            reset       : self.dom.find('.'+self.class.reset),
-            download    : self.dom.find('.'+self.class.download)
+            download    : self.dom.find('.'+self.class.download),
+            file        : self.dom.find('.'+self.class.file)
         };
 
-        self.url            = options.url;
+        //self.url            = options.url;
         self.enterText      = options.enterText;
         self.canvasImage    = '';
 
@@ -58,8 +59,40 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
         self.editorImage = new EditorFilter(self.dom, self.canvas);
 
         //Text
-        self.editorText  = new EditorText(self.dom, self.enterText, self.canvas);
+        self.editorText = new EditorText(self.dom, self.enterText, self.canvas);
 
+        //Brush
+        self.editorBrush = new EditorBrush(self.dom, self.canvas);
+
+
+        self.element.file.on('change', function(){
+            var el = $(this);
+            self.GetImage(el);
+        });
+    };
+
+    Editor.prototype.GetImage = function(el){
+        var self = this;
+
+        if (el[0].files && el[0].files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var blob = self.Blob(e.target.result);
+
+                self.url = blob.blobUrl;
+                self.element.file.remove();
+
+                self.InitImage();
+            };
+            
+            reader.readAsDataURL(el[0].files[0]);
+        }
+    };
+
+    Editor.prototype.InitImage = function(){
+        var self = this;
+        
         //Init Image
         fabric.Image.fromURL(self.url, function(img) {
             self.canvasImage = img;
@@ -78,18 +111,6 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
             object.set(self.editOptions);
         });
 
-        //Resize
-        // $(window).resize(function() {
-        //     console.log('resize');
-        //    self.AdjustCanvasDimension();
-        // });
-
-        //Reset
-        self.element.reset.on('click', function(e){
-            e.preventDefault();
-            self.Reset();
-        });
-
         //Download
         self.element.download.on('click', function(e){
             e.preventDefault();
@@ -98,23 +119,30 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
 
         //Delete Active Object
         $('html').keyup(function(e){
-            if(e.keyCode == 46) {
-                var active = self.canvas.getActiveObject();
-                if(active.id === undefined){
-                    self.canvas.remove(active);
-                    self.editorText.ClearActiveText();
-                } 
-            }
+            self.Delete(e);
+        });
+
+        //Init Tab Content
+        $('body').on('tab-change', function(e, tab){
+            (tab !== "brush")?
+            self.editorBrush.BrushOff() :
+            self.editorBrush.SetBrush();
         });
 
 
     };
 
-    //Reset Image
-    Editor.prototype.Reset = function(){
+    //Delete Active Object
+    Editor.prototype.Delete = function(e){
         var self    = this;
 
-        window.location.reload();
+        if(e.keyCode == 46) {
+            var active = self.canvas.getActiveObject();
+            if(active.id === undefined){
+                self.canvas.remove(active);
+                self.EditorText.ClearActiveText();
+            } 
+        }
     };
 
     //Download Image
@@ -123,7 +151,9 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
             file    = 'image.jpeg';
 
         //Create New Url
-        var newUrl  = self.Blob(),
+        var url = self.canvas.toDataURL({format: 'jpeg', quality: 1.0 });
+
+        var newUrl  = self.Blob(url),
             blob    = newUrl.blob,
             blobUrl = newUrl.blobUrl;
 
@@ -146,12 +176,11 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'b64toBlob']
     };
 
     //Blob Url
-    Editor.prototype.Blob = function(){
+    Editor.prototype.Blob = function(url){
         var self    = this;
 
         //Create New Url
-        var url     = self.canvas.toDataURL({format: 'jpeg', quality: 1.0 }),
-            data    = url.replace('data:image/jpeg;base64,', '');
+        var data    = url.replace('data:image/jpeg;base64,', '');
 
         var blob    = b64toBlob(data, 'image/jpeg');
         var blobUrl = URL.createObjectURL(blob);

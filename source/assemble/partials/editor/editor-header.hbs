@@ -1,27 +1,20 @@
 <!-- editor-header - start -->
 <div class="editor-header">
     <ul class="grid">
-        <li class="grid__col desktop-7">
-            <div class="editor-header__title">IMG100789.jpeg</div>
+        <li class="grid__col desktop-4">
+            <div class="editor-header__title">Edytor zdjęć</div>
             <div class="editor-header__description">Dodaj efekty specjalne do Twojego zdjęcia</div>
         </li>
-        <li class="grid__col desktop-5 to-right">
-            {{> btn 
-                BUTTON=true 
-                LABEL='Przywróć oryginał'   
-                CLASS='btn--grey js-reset'
-            }}
-            &nbsp;
+        <li class="grid__col desktop-8 to-right">
+            
+            <input class="js-file" type="file" name="image" accept="image/jpeg">
+
             {{> btn 
                 BUTTON=true
                 LABEL='Pobierz'
                 CLASS='js-download'  
             }}
-            &nbsp;
-            {{> btn 
-                BUTTON=true 
-                LABEL='Zapisz'   
-            }}
+
         </li>
     </ul>
 </div>

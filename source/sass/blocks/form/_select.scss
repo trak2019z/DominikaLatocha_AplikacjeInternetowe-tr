@@ -1,7 +1,17 @@
 .select{
     position: relative;
     margin-bottom: 16px;
+    padding-bottom:10px;
+    border-bottom: 1px solid rgba($color-purple, 0.3);
     z-index: 0;
+
+    &__label{
+        @include font-regular;
+        color:$color-grey-3;
+        font-size: 10px;    
+        line-height: 12px;
+        margin-bottom:4px;
+    }   
 }
 
 .wrapper .select2-container{

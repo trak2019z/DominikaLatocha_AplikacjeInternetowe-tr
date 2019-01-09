@@ -15,6 +15,7 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
             colorBackP  : 'js-color-back',
             colorBack   : 'js-color-back-item',
             effect      : 'js-effect',
+            image       : 'js-image',
             active      : 'active'
         };
 
@@ -23,7 +24,8 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
             range       : self.dom.find('.'+self.class.range),
             colorBackP  : self.dom.find('.'+self.class.colorBackP),
             colorBack   : self.dom.find('.'+self.class.colorBack),
-            effect      : self.dom.find('.'+self.class.effect)
+            effect      : self.dom.find('.'+self.class.effect),
+            image       : self.dom.find('.'+self.class.image)
         };
 
         self.activeBackColor= '';
@@ -68,8 +70,27 @@ define("EditorFilter", ['jquery', 'fabric'], function($, fabric)
             self.SetEffect(el, false);
         });
 
+        //Init Stickers
+        self.InitStickers();
+
     };
 
+    //Init Stickers
+    EditorFilter.prototype.InitStickers = function(){
+        var self = this;
+
+        self.element.image.on('click', function(){
+            var el = $(this),
+                url = el.data("url");
+
+            //Init Image
+            fabric.Image.fromURL(url, function(img) {
+                self.canvas.add(img).setActiveObject(img);
+                self.canvas.centerObject(img).requestRenderAll();
+            });
+
+        });
+    };
 
     //Image Filters
     EditorFilter.prototype.SetFilter = function(el){

@@ -1,10 +1,14 @@
 .input-color{
+	padding-bottom:10px;
+	border-bottom: 1px solid rgba($color-purple, 0.3);
+	margin-bottom:16px;
 
 	&__label{
 		@include font-regular;
 		color:$color-grey-3;
 		font-size: 10px;	
 		line-height: 12px;
+		margin-bottom:4px;
 	}
 
 	&__input{

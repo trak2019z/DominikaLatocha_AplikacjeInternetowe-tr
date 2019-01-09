@@ -48,23 +48,24 @@ keywords:
 	                            	}}
 	                            {{/compare}}
 
-	                            {{#compare TAB "==" "shapes"}}
-
-
+	                            {{#compare TAB "==" "stickers"}}
+                                    {{> editor-sticker
+                                        DATA=../dataEditorSticker
+                                    }}
 	                            {{/compare}}
 
 	                            {{#compare TAB "==" "text"}}
-
 	                            	{{> editor-text
 	                            		DATA_FONT=../dataEditorFont
 	                            		DATA_COLOR=../dataEditorTextColor
 	                            	}}
-
 	                            {{/compare}}
 
 	                            {{#compare TAB "==" "brush"}}
-
-
+                                    {{> editor-brush 
+                                        DATA_BRUSH=../dataEditorBrush 
+                                        DATA_COLOR=../dataEditorTextColor
+                                    }}
 	                            {{/compare}}
 
                             </div>
