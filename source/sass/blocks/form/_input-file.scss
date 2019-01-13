@@ -1,0 +1,23 @@
+.input-file{
+  cursor: pointer;
+  width: 131px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 24px;
+  float: left;
+
+  @include a(all 0.6s ease);
+
+  &:hover{
+      box-shadow: 0 10px 20px 0 rgba($color-purple,0.25);
+  }
+
+  &:before{
+      @extend .btn;
+      content: 'Wybierz zdjęcie';
+  }
+
+  ::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+}

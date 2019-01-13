@@ -56,7 +56,7 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'EditorBrush
         );
 
         //Image
-        self.editorImage = new EditorFilter(self.dom, self.canvas);
+        self.editorFilter = new EditorFilter(self.dom, self.canvas);
 
         //Text
         self.editorText = new EditorText(self.dom, self.enterText, self.canvas);
@@ -102,7 +102,7 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'EditorBrush
 
             self.canvasImage.id = 0;
 
-            self.editorImage.Init(img);
+            self.editorFilter.Init(img);
         });
 
         //Init Edit Options
@@ -156,6 +156,7 @@ define("Editor", ['jquery', 'fabric', 'EditorFilter', 'EditorText', 'EditorBrush
         var newUrl  = self.Blob(url),
             blob    = newUrl.blob,
             blobUrl = newUrl.blobUrl;
+            console.log(blob);
 
         if (window.navigator.msSaveBlob){
             //IE

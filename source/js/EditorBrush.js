@@ -88,7 +88,7 @@ define("EditorBrush", ['jquery','fabric'], function($, fabric)
         //Brush Color
         self.canvas.freeDrawingBrush.color = bColor;
 
-        //Brush SHadow
+        //Brush Shadow
         self.canvas.freeDrawingBrush.shadow = new fabric.Shadow({
             affectStroke: true,
             color: sColor

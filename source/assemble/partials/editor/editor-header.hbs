@@ -7,7 +7,11 @@
         </li>
         <li class="grid__col desktop-8 to-right">
             
-            <input class="js-file" type="file" name="image" accept="image/jpeg">
+            {{> input-file
+                Class='js-file'
+                Name='file'
+                Accept='image/jpeg'
+            }}
 
             {{> btn 
                 BUTTON=true
